@@ -28,7 +28,6 @@ var tipsListCodeByte = [
 	"What does <span class='code'>use strict</span> do? <span class='code-block'>function doSomething(val) {<span class='comm'> Throws error</span>\"use strict\";<br/> x = val + 10; <br />}<span class='comm'>The 'use strict' literal is entered at the top of a JavaScript program or function - it helps you write safer JavaScript code by throwing an error if a _global variable_ is created by mistake.</span></span><p><span class='quiz'><a href='https://coderbyte.com/algorithm/10-common-javascript-interview-questions'>common-javascript-interview-questions</a></span></p>"
 ]
 
-	reference: "common-javascript-interview-questions",
 var tipsListAsObjects = [
 	{
 		tipId: 1,
