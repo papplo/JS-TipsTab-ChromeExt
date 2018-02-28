@@ -28,33 +28,45 @@ var tipsListCodeByte = [
 	"What does <span class='code'>use strict</span> do? <span class='code-block'>function doSomething(val) {<span class='comm'> Throws error</span>\"use strict\";<br/> x = val + 10; <br />}<span class='comm'>The 'use strict' literal is entered at the top of a JavaScript program or function - it helps you write safer JavaScript code by throwing an error if a _global variable_ is created by mistake.</span></span><p><span class='quiz'><a href='https://coderbyte.com/algorithm/10-common-javascript-interview-questions'>common-javascript-interview-questions</a></span></p>"
 ]
 
-var tipsListObject ={
-	tipId: 2,
-	title: "Codebyte Quizzie",
-	subHead: ["What does <span class='code'>use strict</span> do?", "use strict"],
-	subElement: "use strict",
-	codeBlock: "function doSomething(val) {<span class='comm'> Throws error</span>\"use strict\";<br/> x = val + 10; <br />}<span class='comm'>The 'use strict' literal is entered at the top of a JavaScript program or function - it helps you write safer JavaScript code by throwing an error if a _global variable_ is created by mistake.</span>",
 	reference: "common-javascript-interview-questions",
-	link: "https://coderbyte.com/algorithm/10-common-javascript-interview-questions"
-};
+var tipsListAsObjects = [
+	{
+		tipId: 1,
+		title: "Codebyte Quizzie",
+		subHead: ["What does <span class='code'>use strict</span> do?", "use strict"],
+		subElement: "use strict",
+		codeBlock: "function doSomething(val) {<span class='comm'> Throws error</span>\"use strict\";<br/> x = val + 10; <br />}<span class='comm'>The 'use strict' literal is entered at the top of a JavaScript program or function - it helps you write safer JavaScript code by throwing an error if a _global variable_ is created by mistake.</span>",
+		reference: "common-javascript-interview-questions",
+		link: "https://coderbyte.com/algorithm/10-common-javascript-interview-questions"
+	},
+
+	{
+		//second object
+	}
+];
+
 // Tip Limit counter
-var tipLimit = tipsListCodeByte.length;
+var tipLimit = tipsListAsObjects.length;
 console.log(tipLimit);
 
 // Generate a number
 function generateNumber() {
-	return Math.floor(Math.random() * Math.ceil(tipLimit));
-
+	return Math.floor(Math.random() * Math.floor(tipLimit));
 }
 // Generate a tip:
 // 1. Get random number from generateNumber()
 // 2. Use the random number to get the tip from the array
 // 3. Show the tip
 function generateTip() {
-	var tip = tipsListCodeByte[generateNumber()];
+	// get a tip {obj} from array
+	var tip = tipsListAsObjects[generateNumber()];
 
-	var myJsTipElement = document.querySelector('.js-tip');
-	myJsTipElement.innerHTML = tip;
+	// get object.title and object.tipId
+	var tipTitle = document.querySelector('.tip-number');
+	tipTitle.innerHTML = tip.title + " # " + tip.tipId;
+
+	var tipSubHead = document.querySelector('.js-tip');
+	tipSubHead.innerHTML = tip.subHead[0] + "<span class='code right'><a href='https://lmgtfy.com/?q="+ tip.subHead[1].replace(/\s/g, "+") +"'>" + tip.subHead[1] + "</a></span>";
 
 	var tipLimitCount = document.querySelector('.tip-limit-count');
 	tipLimitCount.innerHTML = tipLimit;
