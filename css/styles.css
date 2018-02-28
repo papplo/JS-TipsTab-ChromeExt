@@ -18,7 +18,7 @@ body {
   margin: 0 auto;
 }
 
-.code {
+.code, .moz {
   font-family: 'operator mono', sans-serif;
   color: #D9985C;
   background-color: #373D4A;
@@ -26,15 +26,45 @@ body {
   font-size: 1rem;
   border-radius: 0.15em;
 }
+.moz {
+  background-color: #20252C;
+  font-style:italic;
+  font-size: .75em;
+  padding: .85em;
+  margin: 15px 0;
+}
+
+a, a:visited, a:hover {
+  color: #DB6173;
+}
+
+.moz::before {
+  content: 'Mozilla Reference:';
+  margin-right: 1em;
+  text-decoration: none !important;
+}
 
 .code-block {
   font-family: 'operator mono', sans-serif;
   background-color: #373D4A;
-  padding: 0.5em 0.75em;
+  padding: 0.5em 2.75em;
   font-size: 1.015rem;
   border-radius: 0.15rem;
   display: block;
   margin: 1rem 0;
+  text-indent: -1em;
+}
+
+.code-block::first-line {
+  text-indent: -2em;
+}
+.code-block .comm {
+  font-style: italic;
+  display: block;
+  color: #58606C;
+}
+.code-block .comm::before {
+  content: '// ';
 }
 
 .tip-number {

@@ -23,8 +23,12 @@ var tipsList = [
 	"Arrays hold lists of data. You can access any of the list items by using bracket notation, like this: <br> <span class='code-block'>var myArray = ['pears', 'asparagus', 'bananas'];<br>myArray[1]; // asparagus</span>"
 ];
 
+var tipsListCodeByte = [
+	"Take an incoming string and reorder it alphabetically using the Array.prototype.method <span class='code'>.sort()</span><br><span class='code-block'>function AlphabetSoup(str) {<span class='comm'>Split string into an array, sort it and join it back to a string.</span>var stringSplit = str.split('');<br/>  var sortedArray = stringSplit.sort(); <br/> var joinedString = sortedArray.join('');<br />   return joinedString; <br /><span class='comm'> Shorthand would be: .split('').sort().join('');</span></span><p><span class='moz'><a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort'>Global_Objects/Array/sort</a>"
+
+]
 // Tip Limit counter
-var tipLimit = tipsList.length;
+var tipLimit = tipsListCodeByte.length;
 console.log(tipLimit);
 
 // Generate a number
@@ -36,7 +40,7 @@ function generateNumber() {
 // 2. Use the random number to get the tip from the array
 // 3. Show the tip
 function generateTip() {
-	var tip = tipsList[generateNumber()];
+	var tip = tipsListCodeByte[generateNumber()];
 
 	var myJsTipElement = document.querySelector('.js-tip');
 	myJsTipElement.innerHTML = tip;
