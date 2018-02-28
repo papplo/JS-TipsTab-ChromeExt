@@ -18,7 +18,7 @@ body {
   margin: 0 auto;
 }
 
-.code, .moz {
+.code, .moz, .quiz {
   font-family: 'operator mono', sans-serif;
   color: #D9985C;
   background-color: #373D4A;
@@ -26,7 +26,7 @@ body {
   font-size: 1rem;
   border-radius: 0.15em;
 }
-.moz {
+.moz, .quiz {
   background-color: #20252C;
   font-style:italic;
   font-size: .75em;
@@ -42,6 +42,11 @@ a, a:visited, a:hover {
   content: 'Mozilla Reference:';
   margin-right: 1em;
   text-decoration: none !important;
+}
+.quiz::before {
+  content: 'Quizzies:';
+  margin-right: 1em;
+  text-decoration: none;
 }
 
 .code-block {

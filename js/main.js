@@ -24,7 +24,8 @@ var tipsList = [
 ];
 
 var tipsListCodeByte = [
-	"Take an incoming string and reorder it alphabetically using the Array.prototype.method <span class='code'>.sort()</span><br><span class='code-block'>function AlphabetSoup(str) {<span class='comm'>Split string into an array, sort it and join it back to a string.</span>var stringSplit = str.split('');<br/>  var sortedArray = stringSplit.sort(); <br/> var joinedString = sortedArray.join('');<br />   return joinedString; <br /><span class='comm'> Shorthand would be: .split('').sort().join('');</span></span><p><span class='moz'><a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort'>Global_Objects/Array/sort</a>"
+	"Take an incoming string and reorder it alphabetically using the Array.prototype.method <span class='code'>.sort()</span><br><span class='code-block'>function AlphabetSoup(str) {<span class='comm'>Split string into an array, sort it and join it back to a string.</span>var stringSplit = str.split('');<br/>  var sortedArray = stringSplit.sort(); <br/> var joinedString = sortedArray.join('');<br />   return joinedString; <br /><span class='comm'> Shorthand would be: .split('').sort().join('');</span></span><p><span class='moz'><a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort'>Global_Objects/Array/sort</a></p>",
+	"What does <span class='code'>use strict</span> do? <span class='code-block'>function doSomething(val) {<span class='comm'> Throws error</span>\"use strict\";<br/> x = val + 10; <br />}<span class='comm'>The 'use strict' literal is entered at the top of a JavaScript program or function - it helps you write safer JavaScript code by throwing an error if a _global variable_ is created by mistake.</span></span><p><span class='quiz'><a href='https://coderbyte.com/algorithm/10-common-javascript-interview-questions'>common-javascript-interview-questions</a></span></p>"
 
 ]
 // Tip Limit counter
