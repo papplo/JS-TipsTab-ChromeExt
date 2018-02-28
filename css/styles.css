@@ -1,5 +1,5 @@
 body {
-  font-family: 'operator mono', sans-serif;
+  font-family: 'operator mono', 'monospace', sans-serif;
   font-size: 16px;
   background-color: #272c36;
   color: #AAAFAF;
@@ -9,7 +9,7 @@ body {
   display: flex;
   justify-content: center;
   align-content: center;
-  width: 40rem;
+  max-width: 54rem;
   margin: 10vh auto;
 }
 
@@ -37,6 +37,11 @@ body {
 a, a:visited, a:hover {
   color: #DB6173;
 }
+.right {
+  position: absolute;
+  top: 2em;
+  right: 2em;
+}
 
 .moz::before {
   content: 'Mozilla Reference:';
@@ -49,7 +54,7 @@ a, a:visited, a:hover {
   text-decoration: none;
 }
 
-.code-block {
+.code-block  {
   font-family: 'operator mono', sans-serif;
   background-color: #373D4A;
   padding: 0.5em 2.75em;
@@ -61,8 +66,9 @@ a, a:visited, a:hover {
 }
 
 .code-block::first-line {
-  text-indent: -2em;
+  text-indent: 2em;
 }
+
 .code-block .comm {
   font-style: italic;
   display: block;
@@ -82,8 +88,8 @@ a, a:visited, a:hover {
   font-size: 1rem;
 }
 
-.js-tip {
-  margin: auto;
+.js-tip, .code-block{
+  margin: .5em auto;
   line-height: 2rem;
   font-weight: 300;
   font-size: 1.075rem

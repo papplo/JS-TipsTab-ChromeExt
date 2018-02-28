@@ -1,54 +1,122 @@
 // List of JavaScript tips
-var tipsList = [
-	"Don't forget the <span class='code'>var</span> keyword when assigning a variable's value for the first time.",
+"use strict";
+var tipsListAsObjects = [
+	{
+		tipId: 1,
+		title: "Codebyte Quizzie",
+		subHead: [
+			"What does <span class='code'>use strict</span> do?",
+			"use strict"
+		],
+		codeBlock: [
+			{
+			name: "use strict",
+			code: "function doSomething(val) {<span class='comm'> Throws error</span>\"use strict\";<br/> x = val + 10; <br />}<span class='comm'>The 'use strict' literal is entered at the top of a JavaScript program or function - it helps you write safer JavaScript code by throwing an error if a _global variable_ is created by mistake.</span>"
+		}],
+		reference: "common-javascript-interview-questions",
+		link: "https://coderbyte.com/algorithm/10-common-javascript-interview-questions"
+	},
+	{
+		tipId: 2,
+		title: "Common array methods in Js",
+		subHead: [
+			"Below are some array functions that are commonly required in order to complete Coderbyte challenges.",
+			"array methods"
+		],
+		codeBlock: [
+			{
+				name: "indexOf",
+				code: "<span class='comm'>Return the index of a specific element in the array. If the element does not exist in the array, the function returns -1.</span> <br> var arr = [1, 2, 100, 12, -1]; <br />arr.indexOf(100);// 2 <br /> arr.indexOf(5); // -1"
+			},
+			{
+				name: "push and pop",
+				code: "<span class='comm'>Push elements to the end of the array and delete the last element from an array.</span> <br> var arr = [1, 2, 3, 4]; <br />arr.push(5) // [1, 2, 3, 4, 5]<br /> arr.push(6, 7, 8); // [1, 2, 3, 4, 5, 6, 7, 8]<br /> arr.pop(); // [1, 2, 3, 4, 5, 6, 7]"
+			}
+		],
+		reference: "Coderbyte Tutorial",
+		link: "https://coderbyte.com/tutorial/common-array-methods-in-javascript"
+	},
+	{
+		tipId: 3,
+		title: "AlphabetSoup",
+		subHead: [
+			"Take an incoming string and reorder it alphabetically using the Array.prototype.method <span class='code'>.sort()</span>",
+			".sort()"],
+		codeBlock: [
+			{
+				name: "soup",
+				code: "function AlphabetSoup(str) {<span class='comm'>Split string into an array, sort it and join it back to a string.</span>var stringSplit = str.split('');<br/>  var sortedArray = stringSplit.sort(); <br/> var joinedString = sortedArray.join('');<br />   return joinedString; <br /><span class='comm'> Shorthand would be: .split('').sort().join('');</span></span><p><span class='moz'><a href=''></a></p>"
+			},
+		],
+		reference: "Global_Objects/Array/sort",
+		link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort"
+	}
 
-	"<span class='code'>undefined</span>, <span class='code'>null</span>, <span class='code'>0</span>, <span class='code'>false</span>, <span class='code'>NaN</span>, and <span class='code'>''</span> (empty string) are all falsy.",
-
-	"Declare a function with<br/> <span class='code-block'>function <em>myFunctionName</em>() { <br>&nbsp;&nbsp;...<br> }</span>",
-
-	"<span class='code'>if</span>/<span class='code'>else</span> statements look like <br/> <span class='code-block'>if (<em>condition</em>) { <br/>&nbsp;&nbsp;...<br/>} else { <br/>&nbsp;&nbsp;...<br/>}",
-
-	"You can return the result of a function into a variable with <span class='code'>return</span>:<br><span class='code-block'>function timesFive(inputNumber) {<br> &nbsp;&nbsp;return inputNumber * 5; <br>}<br>console.log(timesFive(6));<br>// Output: 30</span> ",
-
-	"The <span class='code'>&&</span> operator means both things must be true: <br/> <span class='code-block'> true && true = true<br>true && false = false<br>false && false = false</span>",
-
-	"The <span class='code'>||</span> operator means either can be true: <br/> <span class='code-block'> true || true = true<br>true || false = true<br>false || false = false</span>",
-
-	"A <span class='code'>for</span> has three condtions: a start condition, a stop condition, and an iterator: <br> <span class='code-block'>for (var i = 0; i < myArray.length; i++) { <br>&nbsp;&nbsp;...<br>}</span>",
-
-	"To interpolate a variable into a string, use the <span class='code'>+</span> operator, like this: <br> <span class='code-block'>var myName = 'Jon';<br/> 'Hello, my name is ' + myName;</span>",
-
-	"To generate a random number, use JavaScript's built in function <span class='code'>Math.random()</span>.",
-
-	"Arrays hold lists of data. You can access any of the list items by using bracket notation, like this: <br> <span class='code-block'>var myArray = ['pears', 'asparagus', 'bananas'];<br>myArray[1]; // asparagus</span>"
+	/* copy this to a new array {object}
+	{
+		tipId: "",
+		title: "",
+		subHead: ["", ""],
+		subElement: "",
+		codeBlock: "",
+		reference: "",
+		link: ""
+	},
+	*/
 ];
 
-var tipsListCodeByte = [
-	"Take an incoming string and reorder it alphabetically using the Array.prototype.method <span class='code'>.sort()</span><br><span class='code-block'>function AlphabetSoup(str) {<span class='comm'>Split string into an array, sort it and join it back to a string.</span>var stringSplit = str.split('');<br/>  var sortedArray = stringSplit.sort(); <br/> var joinedString = sortedArray.join('');<br />   return joinedString; <br /><span class='comm'> Shorthand would be: .split('').sort().join('');</span></span><p><span class='moz'><a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort'>Global_Objects/Array/sort</a></p>",
-	"What does <span class='code'>use strict</span> do? <span class='code-block'>function doSomething(val) {<span class='comm'> Throws error</span>\"use strict\";<br/> x = val + 10; <br />}<span class='comm'>The 'use strict' literal is entered at the top of a JavaScript program or function - it helps you write safer JavaScript code by throwing an error if a _global variable_ is created by mistake.</span></span><p><span class='quiz'><a href='https://coderbyte.com/algorithm/10-common-javascript-interview-questions'>common-javascript-interview-questions</a></span></p>"
-
-]
 // Tip Limit counter
-var tipLimit = tipsListCodeByte.length;
-console.log(tipLimit);
+var tipLimit = tipsListAsObjects.length; // how many items in our object do we have?
+var someArray = Array.apply(null, {length: tipLimit}).map(Function.call, Number);
+console.log("Tips: "+ tipLimit +" "+ someArray);
 
-// Generate a number
-function generateNumber() {
-	return Math.floor(Math.random() * Math.floor(tipLimit));
+//es6 version of a shuffle
+function remainingNumber() {
+	someArray.sort( () => Math.random() * 2 - 1);
+	//someArray.shift();
+	console.log("Starting with tip " + someArray[0] +", random remaining order is: "+ someArray);
+	return someArray[0];
 }
+
 // Generate a tip:
 // 1. Get random number from generateNumber()
 // 2. Use the random number to get the tip from the array
 // 3. Show the tip
 function generateTip() {
-	var tip = tipsListCodeByte[generateNumber()];
+	//remainingNumber();
 
-	var myJsTipElement = document.querySelector('.js-tip');
-	myJsTipElement.innerHTML = tip;
+	// get a tip {obj} from array
+	var tip = tipsListAsObjects[remainingNumber()];
+	// get object.title and object.tipId
+	var tipTitle = document.querySelector('.tip-number');
+	tipTitle.innerHTML = "#" + tip.tipId +" "+ tip.title;
+
+	var tipSubHead = document.querySelector('.js-tip');
+	tipSubHead.innerHTML = tip.subHead[0] + "<span class='code right'><a href='https://lmgtfy.com/?q="+ tip.subHead[1].replace(/\s/g, "+") +"'>" + tip.subHead[1] + "</a></span>";
+
+	var container = document.querySelector('.tip-container');
+	var codeBlockName = document.querySelector('.tip-container.code-block-name');
+	var codeBlock = document.querySelector('.code-block');
+	// clear our codeBlock
+	//
+
+	var i, item, key;
+	for (i = 0; i < tip.codeBlock.length; i++) {
+		//codeBlock.innerHTML = "";
+
+	    for (item in tip.codeBlock[i] ) {
+	        codeBlock.innerHTML = tip.codeBlock[i][item] + "<br>";
+	    }
+	}
+
 
 	var tipLimitCount = document.querySelector('.tip-limit-count');
 	tipLimitCount.innerHTML = tipLimit;
+	someArray.shift();
+
 }
+
+
 
 // Tip button click
 // 1. Select the tip button
@@ -60,11 +128,12 @@ function generateTip() {
 function onTipButtonClick() {
 	var tipButton = document.querySelector('.tip-button');
 	var clickyClippy = tipButton.addEventListener('click', function(){
-		if(tipLimit > 0) {
+		if(tipLimit > 1) {
 			tipLimit--;
 			generateTip();
 			console.log(tipLimit + "left");
-		} else if (tipLimit === 0){
+		} else if (tipLimit === 1){
+			document.querySelector('.tip-limit-count').innerHTML = 0;
 			tipButton.classList.add('disabled');
 			tipButton.insertAdjacentHTML('afterend', '<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">Find more tips at Mozilla Developer Docs</a></p>');
 		}
