@@ -1,0 +1,75 @@
+body {
+  font-family: 'operator mono', sans-serif;
+  font-size: 16px;
+  background-color: #272c36;
+  color: #AAAFAF;
+  letter-spacing: 0.05rem;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 40rem;
+  margin: 10vh auto;
+}
+
+.tip {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.code {
+  font-family: 'operator mono', sans-serif;
+  color: #D9985C;
+  background-color: #373D4A;
+  padding: 0.25rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.15em;
+}
+
+.code-block {
+  font-family: 'operator mono', sans-serif;
+  background-color: #373D4A;
+  padding: 0.5em 0.75em;
+  font-size: 1.015rem;
+  border-radius: 0.15rem;
+  display: block;
+  margin: 1rem 0;
+}
+
+.tip-number {
+  margin: auto;
+  margin-bottom: 2.5rem;
+  color: #DB6173;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.js-tip {
+  margin: auto;
+  line-height: 2rem;
+  font-weight: 300;
+  font-size: 1.075rem
+}
+
+.tip-button {
+  font-family: 'operator mono', sans-serif;
+  background-color: transparent;
+  border: 1px solid #84C670;
+  color:  #84C670;
+  padding: .75em 1em;
+  display: inline-block;
+  margin: auto;
+  font-size: .95em;
+  margin-top: 2.5rem;
+  cursor: pointer;
+  font-weight: 300;
+}
+
+.disabled {
+  background-color: #D8D8D8 !important;
+  color: #888;
+  cursor: not-allowed !important;
+}
