@@ -1,5 +1,4 @@
 // List of JavaScript tips
-"use strict";
 var tipsListAsObjects = [
 	{
 		tipId: 1,
@@ -27,10 +26,6 @@ var tipsListAsObjects = [
 			{
 				name: "indexOf",
 				code: "<span class='comm'>Return the index of a specific element in the array. If the element does not exist in the array, the function returns -1.</span> <br> var arr = [1, 2, 100, 12, -1]; <br />arr.indexOf(100);// 2 <br /> arr.indexOf(5); // -1"
-			},
-			{
-				name: "push and pop",
-				code: "<span class='comm'>Push elements to the end of the array and delete the last element from an array.</span> <br> var arr = [1, 2, 3, 4]; <br />arr.push(5) // [1, 2, 3, 4, 5]<br /> arr.push(6, 7, 8); // [1, 2, 3, 4, 5, 6, 7, 8]<br /> arr.pop(); // [1, 2, 3, 4, 5, 6, 7]"
 			}
 		],
 		reference: "Coderbyte Tutorial",
@@ -45,20 +40,55 @@ var tipsListAsObjects = [
 		codeBlock: [
 			{
 				name: "soup",
-				code: "function AlphabetSoup(str) {<span class='comm'>Split string into an array, sort it and join it back to a string.</span>var stringSplit = str.split('');<br/>  var sortedArray = stringSplit.sort(); <br/> var joinedString = sortedArray.join('');<br />   return joinedString; <br /><span class='comm'> Shorthand would be: .split('').sort().join('');</span></span><p><span class='moz'><a href=''></a></p>"
+				code: "function AlphabetSoup(str) {<span class='comm'>Split string into an array, sort it and join it back to a string.</span>var stringSplit = str.split('');<br/>  var sortedArray = stringSplit.sort(); <br/> var joinedString = sortedArray.join('');<br />   return joinedString; <br /><span class='comm'> Shorthand would be: .split('').sort().join('');</span>"
 			},
 		],
 		reference: "Global_Objects/Array/sort",
-		link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort"
-	}
+		link:"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort"
+	},
 
+	{
+		tipId: "4",
+		title: "Type conversion",
+		subHead: [
+			"<span class='code'>==</span> performs implicit type conversion to check if values are equal to each other. So it will convert the values to true or false boolean values and then compare them.",
+			"== and ==="],
+		codeBlock: [
+			{
+				name: "implicit type conversion",
+				code: "\"1\" == 1 // true <br /> true == 1 // true <br /> [] == false // true <br /> \"\" == false // true <br /> undefined == null // true <br /> <br /> \"1\" === 1 // false <br />true === 1 // false <br/>[] === false // false<br /> \"\" === false // false <br /> undefined === null // false"
+			},
+		],
+		reference: "",
+		link: ""
+	},
+	{
+		tipId: "5",
+		title: "Add own methods to the Array object",
+		subHead: [
+			"JavaScript is a <span class='code'>prototype-based language</span>. Each object is linked to another object, its prototype, and it inherits its methods. You can follow the prototype chain for each object up until you reach the null object which has no prototype.",
+			"Object prototype"
+		],
+		codeBlock: [
+			{
+				name: "Using the prototype Property",
+				code: "Array.prototype.average = function() {  <span class='comm'>calculate sum</span>  var sum = this.reduce(function(prev, cur) { return prev + cur; });<br />  <span class='comm'>return sum divided by number of elements</span>  return sum / this.length;}<br />var arr = [1, 2, 3, 4, 5]; <br />var avg = arr.average(); <br />console.log(avg); // => 3"
+			}
+		],
+		reference: "",
+		link: ""
+	},
 	/* copy this to a new array {object}
 	{
 		tipId: "",
 		title: "",
 		subHead: ["", ""],
-		subElement: "",
-		codeBlock: "",
+		codeBlock: [
+			{
+				name: "",
+				code: ""
+			}
+		],
 		reference: "",
 		link: ""
 	},
@@ -79,9 +109,6 @@ function remainingNumber() {
 }
 
 // Generate a tip:
-// 1. Get random number from generateNumber()
-// 2. Use the random number to get the tip from the array
-// 3. Show the tip
 function generateTip() {
 	//remainingNumber();
 
@@ -95,36 +122,26 @@ function generateTip() {
 	tipSubHead.innerHTML = tip.subHead[0] + "<span class='code right'><a href='https://lmgtfy.com/?q="+ tip.subHead[1].replace(/\s/g, "+") +"'>" + tip.subHead[1] + "</a></span>";
 
 	var container = document.querySelector('.tip-container');
-	var codeBlockName = document.querySelector('.tip-container.code-block-name');
-	var codeBlock = document.querySelector('.code-block');
-	// clear our codeBlock
-	//
+	var codeBlock = document.querySelector('.tip-container .code-block');
+	var codeBlockName = document.querySelector('.code-block .code-block-name');
+
 
 	var i, item, key;
 	for (i = 0; i < tip.codeBlock.length; i++) {
-		//codeBlock.innerHTML = "";
-
-	    for (item in tip.codeBlock[i] ) {
-	        codeBlock.innerHTML = tip.codeBlock[i][item] + "<br>";
-	    }
+	  for (key in tip.codeBlock[i] ) {
+			codeBlock.innerHTML = "<h4>" + tip.codeBlock[i].name + "</h4>" + tip.codeBlock[i].code + "<br>";
+		}
 	}
 
 
+
 	var tipLimitCount = document.querySelector('.tip-limit-count');
-	tipLimitCount.innerHTML = tipLimit;
+	tipLimitCount.innerHTML = tipLimit -1;
 	someArray.shift();
 
 }
 
-
-
-// Tip button click
-// 1. Select the tip button
-// 2. Add a click event listener
-// 3. When the button is clicked:
-// 3a. Subtract 1 from the tipLimit
-// 3b. If the tipLimit is still above or equal to 0, generate a new tip
-// 3c. If not, change the button text and look
+// addEventListener for button click
 function onTipButtonClick() {
 	var tipButton = document.querySelector('.tip-button');
 	var clickyClippy = tipButton.addEventListener('click', function(){
@@ -140,6 +157,8 @@ function onTipButtonClick() {
 	});
 };
 
+// fire off addEventListener
 onTipButtonClick();
+
 // Get the first tip
 generateTip();

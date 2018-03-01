@@ -57,7 +57,7 @@ a, a:visited, a:hover {
 .code-block  {
   font-family: 'operator mono', sans-serif;
   background-color: #373D4A;
-  padding: 0.5em 2.75em;
+  padding: 0.5em 2.75em 1.5em;
   font-size: 1.015rem;
   border-radius: 0.15rem;
   display: block;
