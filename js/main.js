@@ -97,15 +97,14 @@ var tipsListAsObjects = [
 
 // Tip Limit counter
 var tipLimit = tipsListAsObjects.length; // how many items in our object do we have?
-var someArray = Array.apply(null, {length: tipLimit}).map(Function.call, Number);
-console.log("Tips: "+ tipLimit +" "+ someArray);
+var currOrder = Array.apply(null, {length: tipLimit}).map(Function.call, Number);
+console.log("Tips: "+ tipLimit +" "+ currOrder);
 
 //es6 version of a shuffle
 function remainingNumber() {
-	someArray.sort( () => Math.random() * 2 - 1);
-	//someArray.shift();
-	console.log("Starting with tip " + someArray[0] +", random remaining order is: "+ someArray);
-	return someArray[0];
+	currOrder.sort( () => Math.random() * 2 - 1);
+	console.log("Starting with tip " + currOrder[0] +", random remaining order is: "+ currOrder);
+	return currOrder[0];
 }
 
 // Generate a tip:
@@ -133,12 +132,9 @@ function generateTip() {
 		}
 	}
 
-
-
 	var tipLimitCount = document.querySelector('.tip-limit-count');
 	tipLimitCount.innerHTML = tipLimit -1;
-	someArray.shift();
-
+	currOrder.shift();
 }
 
 // addEventListener for button click
