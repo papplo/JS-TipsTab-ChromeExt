@@ -78,6 +78,19 @@ var tipsListAsObjects = [
 		reference: "",
 		link: ""
 	},
+	{
+		tipId: "5",
+		title: "Eloquent JavaScript #5 - Higher order functions",
+		subHead: ["<h4>Summary</h4>Being able to pass <span class='code'>function values</span> to other functions is a deeply useful aspect of JavaScript. It allows us to write functions that model computations with “gaps” in them. The code that calls these functions can fill in the gaps by providing function values.<br /><br /> Arrays provide a number of useful higher-order methods. You can use <span class='code'>forEach</span> to loop over the elements in an array. The <span class='code'>filter</span> method returns a new array with the elements that didn’t pass the predicate function filtered out. Transforming an array by putting each element through a function is done with <span class='code'>map</span>. You can use <span class='code'>reduce</span> to combine all the elements in an array into a single value. The <span class='code'>some</span> method tests whether any element matches a given predicate function. And <span class='code'>findIndex</span> finds the position of the first element that matches a predicate.", "abstraction in functions"],
+		codeBlock: [
+			{
+				name: "",
+				code: "Reference: Eloquent Javascript, chapter 05 <a href='https://eloquentjavascript.net/05_higher_order.html'>Eloquent Javascript 05</a>"
+			}
+		],
+		reference: "Eloquent Javascript 05",
+		link: "https://eloquentjavascript.net/05_higher_order.html"
+	},
 	/* copy this to a new array {object}
 	{
 		tipId: "",
@@ -94,6 +107,7 @@ var tipsListAsObjects = [
 	},
 	*/
 ];
+
 
 // Tip Limit counter
 var tipLimit = tipsListAsObjects.length; // how many items in our object do we have?
