@@ -46,7 +46,6 @@ var tipsListAsObjects = [
 		reference: "Global_Objects/Array/sort",
 		link:"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort"
 	},
-
 	{
 		tipId: "4",
 		title: "Type conversion",
@@ -79,7 +78,7 @@ var tipsListAsObjects = [
 		link: ""
 	},
 	{
-		tipId: "5",
+		tipId: "6",
 		title: "Eloquent JavaScript #5 - Higher order functions",
 		subHead: ["<h4>Summary</h4>Being able to pass <span class='code'>function values</span> to other functions is a deeply useful aspect of JavaScript. It allows us to write functions that model computations with “gaps” in them. The code that calls these functions can fill in the gaps by providing function values.<br /><br /> Arrays provide a number of useful higher-order methods. You can use <span class='code'>forEach</span> to loop over the elements in an array. The <span class='code'>filter</span> method returns a new array with the elements that didn’t pass the predicate function filtered out. Transforming an array by putting each element through a function is done with <span class='code'>map</span>. You can use <span class='code'>reduce</span> to combine all the elements in an array into a single value. The <span class='code'>some</span> method tests whether any element matches a given predicate function. And <span class='code'>findIndex</span> finds the position of the first element that matches a predicate.", "abstraction in functions"],
 		codeBlock: [
@@ -91,7 +90,19 @@ var tipsListAsObjects = [
 		reference: "Eloquent Javascript 05",
 		link: "https://eloquentjavascript.net/05_higher_order.html"
 	},
-	/* copy this to a new array {object}
+	{
+		tipId: "7",
+		title: "Recursion in functional JavaScript",
+		subHead: ["Recursion is best applied when you need to call the same function repeatedly with different parameters from within a loop. <br />One reason that recursion is favored in functional programming languages is that it allows for the construction of code that doesn’t require <span class='code'>setting and maintaining state with local variables</span>. Recursive functions are also naturally easy to test because they are easy to write in a pure manner, with a specific and consistent return value for any given input, and no side effects on external variable states.", "Recursion Function"],
+		codeBlock: [
+			{
+				name: "Factorial of n",
+				code: "var factorial = function(number) { <br />if (number <= 0) { <span class='comm'>terminal case</span> return 1;}<br />   else {<span class='comm'>block to execute</span> return (number * factorial(number - 1));<br /> }};console.log(factorial(6));<span class='comm'>returns 720</span>"
+			}
+		],
+		reference: "",
+		link: ""
+	},/* copy this to a new array {object}
 	{
 		tipId: "",
 		title: "",
